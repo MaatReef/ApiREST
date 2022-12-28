@@ -14,6 +14,9 @@ const { HomeController } = require('../controllers');
 const { HomeRoutes } = require('../routes/index.routes');
 const Routes = require('../routes');
 
+// Models
+const {User, Comment, Idea} = require('../models');
+
 const container = createContainer();
 
 container.register({
@@ -27,6 +30,11 @@ container.register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton()
 }).register({
     HomeRoutes: asFunction(HomeRoutes).singleton()
+}).register({
+    // Lo agregamos como asValue, ya que es un objeto de tipo mongoose
+    User: asValue(User),
+    Idea: asValue(Idea),
+    Comment: asValue(Comment)
 }); 
 
 module.exports = container; 
