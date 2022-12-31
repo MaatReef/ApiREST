@@ -5,16 +5,16 @@ const IdeaSchema = new Schema({
     idea : {type: String, required: true},
     description : {type: String},
     upvotes: [{type: Boolean}],
-    downvvotes: [{type: Boolean}],
+    downvotes: [{type: Boolean}],
     author: { 
-        type: Schema.types.ObjectId, 
+        type: Schema.Types.ObjectId, 
         ref: "user", 
         required: true, 
         autopopulate: true
     },
     comments:  [
         {
-            type: Schema.types.ObjectId, 
+            type: Schema.Types.ObjectId, 
             ref: "comment", 
             required: true, 
             autopopulate: true
