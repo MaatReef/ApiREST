@@ -1,6 +1,6 @@
 // Clase que da inicio a nuestra aplicación
 const express = require('express');
-const { resolve } = require('./container');
+//const { resolve } = require('./container');
 
 let _express = null;
 let _config = null;
