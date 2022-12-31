@@ -43,14 +43,8 @@ class BaseService{
     }
 
     async delete(id) {
-        if(!id){
-            const error = new Error();
-            error.status = 400;
-            error.message = "Id must be sent";
-            throw error;
-        }
-
-        return await this.repository.delete(id);
+        await this.repository.delete(id);
+        return true;
     }
 
 }
