@@ -15,3 +15,4 @@ module.exports = function({ IdeaController }){
 
     return router;
 };
+
