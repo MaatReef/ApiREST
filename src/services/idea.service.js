@@ -2,9 +2,9 @@ const BaseService = require('./base.service');
 let _ideaRepository = null;
 
 class IdeaService extends BaseService {
-    constructor({ideaRepository}){
-        ruper(ideaRepository);
-        _ideaRepository = ideaRepository;
+    constructor({IdeaRepository}){
+        super(IdeaRepository);
+        _ideaRepository = IdeaRepository;
     }
 
     async getUserIdeas(author){

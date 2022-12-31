@@ -11,7 +11,7 @@ const { HomeService, UserService, IdeaService, CommentService } = require('../se
 const { HomeController, UserController, IdeaController, CommentController } = require('../controllers');
 
 // Routes
-const { HomeRoutes } = require('../routes/index.routes');
+const { HomeRoutes, UserRoutes, IdeaRoutes, CommentRoutes  } = require('../routes/index.routes');
 const Routes = require('../routes');
 
 // Models
@@ -38,7 +38,10 @@ container.register({
     IdeaController: asClass(IdeaController.bind(IdeaController)).singleton(),
     CommentController: asClass(CommentController.bind(CommentController)).singleton(),
 }).register({
-    HomeRoutes: asFunction(HomeRoutes).singleton()
+    HomeRoutes: asFunction(HomeRoutes).singleton(),
+    UserRoutes: asFunction(UserRoutes).singleton(),
+    IdeaRoutes: asFunction(IdeaRoutes).singleton(),
+    CommentRoutes: asFunction(CommentRoutes).singleton()
 }).register({
     // Lo agregamos como asValue, ya que es un objeto de tipo mongoose
     User: asValue(User),
